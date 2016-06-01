@@ -27,13 +27,15 @@
     "gulp-uglifycss": "^1.0.6",
     "gulp-util": "^3.0.7",
     "jquery": "^2.2.4",
+    "shelljs": "^0.7.0",
     "tsify": "^0.16.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "express": "^4.13.4"
   },
   "repository": {
     "type": "git",

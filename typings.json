@@ -4,6 +4,9 @@
     "angular-ui-bootstrap": "registry:dt/angular-ui-bootstrap#0.13.3+20160501125848",
     "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160521151413",
     "bootstrap": "registry:dt/bootstrap#3.3.5+20160316155526",
-    "jquery": "registry:dt/jquery#1.10.0+20160417213236"
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160417213236",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "node": "registry:dt/node#6.0.0+20160524002506"
   }
 }

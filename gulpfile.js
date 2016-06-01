@@ -10,9 +10,12 @@ var watchify = require("watchify");
 var sass = require("gulp-sass");
 var uglyCss = require("gulp-uglifycss");
 var pug = require("gulp-pug");
+var ts = require("gulp-typescript");
+var shell = require("shelljs");
 
 var paths = {
     ts_libs: 'src/ts/libs.ts',
+    ts_serve: 'src/ts/server.ts',
     ts_app: 'src/ts/app.ts',
     js_dest: 'dist/js',
     scss_file: "src/scss/styles.scss",
@@ -84,7 +87,19 @@ gulp.task("build_styles",  function () {
 gulp.task("watch", function () {
     gulp.watch(paths.scss_file, ["build_styles"]);
     gulp.watch(paths.pug_fls, ["build_html"]);
+    gulp.watch(paths.index_fl, ["build_html"]);
+    gulp.watch(paths.ts_serve, ['build_server']);
 })
+
+gulp.task('build_server', function () {
+   gulp.src(paths.ts_serve)
+    .pipe(ts())
+    .pipe(gulp.dest(paths.js_dest))
+});
+
+gulp.task('serve', ['build_server'], function () {
+    shell.exec('nodemon '+paths.js_dest+'/server.js')
+});
 
 gulp.task("build_app", bundleApp);
 
